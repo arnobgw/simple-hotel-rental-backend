@@ -1,0 +1,102 @@
+{
+  "login": {
+    "url": "/login",
+    "type": "post",
+    "request": {
+      "username": "asd",
+      "password": "asd"
+    },
+    "return": {
+      "success": "true/false [boolean]",
+      "isAdmin": "true/false [boolean]"
+    }
+  },
+  "register": {
+    "url": "/register",
+    "type": "post",
+    "request": {
+      "username": "string [no space]",
+      "name": "string",
+      "email": "string [no space]",
+      "password": "string [non-empty]"
+    },
+    "return": {
+      "success": "true/false [boolean]",
+      "error-code": "0|1|2|3|4|5|6 [numeric]",
+      "error-message": " |duplicate email|duplicate user name|blank name|blank password"
+    }
+  },
+  "read-property-info": {
+    "url": "/property/{rent/purchase/venue/id}",
+    "type": "get",
+    "return": {
+      "property-id": "id",
+      "property-name": "string",
+      "property-type": "house|flat|apartment|plot|hostel|flat-sublet|office|shop|business",
+      "lease-type": "rent/purchase/venue",
+      "address": "string",
+      "contact-person": "string",
+      "contact-phone": "string",
+      "cost": "numeric [double]",
+      "time-unit": "day/week/month/year/null",
+      "picture-url": [
+        "url1",
+        "url2",
+        "url3",
+        "url4"
+      ]
+    }
+  },
+  "add-new-property": {
+    "url": "/property",
+    "type": "post",
+    "request": {
+      "property-id": "id",
+      "property-name": "string",
+      "property-type": "house|flat|apartment|plot|hostel|flat-sublet|office|shop|business",
+      "lease-type": "rent/purchase/venue",
+      "address": "string",
+      "contact-person": "string",
+      "contact-phone": "string",
+      "cost": "numeric [double]",
+      "time-unit": "day/week/month/year/null",
+      "picture-url": [
+        "url1",
+        "url2",
+        "url3",
+        "url4"
+      ]
+    },
+    "return": {
+      "property-id": "id",
+      "success": "true/false [boolean]",
+      "error-code": "0|1|2|3|4|5|6 [numeric]",
+      "error-message": "|duplicate email| duplicate user name| blank name|blank password"
+    }
+  },
+  "edit-property": {
+    "url": "/property/id",
+    "type": "patch",
+    "request": {
+      "property-name": "string",
+      "property-type": "house|flat|apartment|plot|hostel|flat-sublet|office|shop|business",
+      "lease-type": "rent/purchase/venue",
+      "address": "string",
+      "contact-person": "string",
+      "contact-phone": "string",
+      "cost": "numeric [double]",
+      "time-unit": "day/week/month/year/null",
+      "picture-url": [
+        "url1",
+        "url2",
+        "url3",
+        "url4"
+      ]
+    },
+    "return": {
+      "success": "true/false [boolean]",
+      "error-code": "0|1|2|3|4|5|6 [numeric]",
+      "error-message": "|duplicate email| duplicate user name| blank name|blank password"
+    }
+  }
+}
